@@ -1,0 +1,11 @@
+{
+    "dependencies": {
+    },
+    "scripts": {
+        "build": "./node_modules/.bin/esbuild main_*.ts --bundle --platform=node --minify --outdir=dist && node pack.ts"
+    },
+    "devDependencies": {
+        "esbuild": "0.25.4",
+        "javascript-obfuscator": "^4.1.1"
+    }
+}
