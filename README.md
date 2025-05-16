@@ -26,7 +26,7 @@ import { Input, Output } from "@/typings/hello/hello";
 export async function handler({ input, logger }: Args<Input>): Promise<Output> {
   return {
     // 完成函数调用
-    meta: await impl(), // 因为eval返回的是函数本身，所以这里可以直接传入对象
+    meta: await impl(), // 因为eval返回的是函数本身，所以这里可以直接传入参数
   };
 };
 
@@ -44,3 +44,10 @@ let impl: any;
 
 只需要新建`main_`开头的`ts`文件，则会在执行`npm run build`的时候自动在dist文件夹生成编译后的ts结果
 
+---
+
+## 为什么要这么做
+
+Coze提供的云函数功能针对功能很少的插件编写可能非常容易，但如果功能非常复杂，Coze的单文件会使得代码的维护非常困难，很难通过目录层级进行代码管理
+
+在编译期间也会引入自动混淆以及代码压缩，免去在平台引入依赖的开销
