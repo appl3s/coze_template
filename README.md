@@ -1,4 +1,4 @@
-# Coze Typescipt template
+# Coze Template
 
 本项目创建了一个Coze Typescript的模板，可以方便快速的开始Coze插件研发和打包，自带混淆功能
 
